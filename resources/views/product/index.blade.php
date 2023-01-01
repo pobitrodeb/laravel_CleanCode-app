@@ -12,42 +12,10 @@
            <div class="card">
             <div class="card-header bg-success text-white">Add New Product </div>
             <div class="card-body">
-                <form action="">
-                    <div class="row mb-3">
-                        <div class="col-md-3">Product Name : </div>
-                        <div class="col-md-9">
-                            <input type="text" class="form-control">
-                        </div>
-                    </div>
-
-                    <div class="row mb-3">
-                        <div class="col-md-3">Product Price : </div>
-                        <div class="col-md-9">
-                            <input type="number" class="form-control">
-                        </div>
-                    </div>
-
-                    <div class="row mb-3">
-                        <div class="col-md-3">Product Short-Description  : </div>
-                        <div class="col-md-9">
-                        <textarea class="form-control"></textarea>
-                        </div>
-                    </div>
-
-                    <div class="row mb-3">
-                        <div class="col-md-3">Product Image  : </div>
-                        <div class="col-md-9">
-                        <input type="file" class="form-control-file">
-                        </div>
-                    </div>
-
-                    <div class="row mb-3">
-                        <div class="col-md-3"></div>
-                        <div class="col-md-9">
-                      <a href="" class="btn btn-success w-100 p-2"> Create New Product </a>
-                        </div>
-                    </div>
-
+                <form action="" method="POST" enctype="multipart/form-data">
+                    @csrf
+                        <x-forms.name :title=" 'Product Name' " :type=" 'text' " :name=" 'name' " :placeholder=" 'Enter your Product Name' "/>
+                        <x-forms.price :title=" 'Product Price' " :type=" 'number' " :name=" 'price' " :placeholder=" 'Enter your Product Price' "/>
                 </form>
             </div>
            </div>
